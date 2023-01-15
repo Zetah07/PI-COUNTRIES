@@ -4,6 +4,11 @@ module.exports = (sequelize) => {
   sequelize.define(
     "activity",
     {
+      id:{
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true,
+      },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -19,6 +24,7 @@ module.exports = (sequelize) => {
       },
       country: {
         type: DataTypes.ARRAY(DataTypes.STRING),
+        allowNull: false,
       },
     },
     { timestamps: false }

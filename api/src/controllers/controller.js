@@ -84,19 +84,19 @@ const getCountryById = async (id) =>{
     return result;
 }
 
-const postActivity = (id, name, difficulty, duration, season) => {
-    return {
-        id,
-        name,
-        difficulty,
-        duration,
-        season
-    }
-} 
+// const postActivity = (id, name, difficulty, duration, season) => {
+//     return {
+//         id,
+//         name,
+//         difficulty,
+//         duration,
+//         season
+//     }
+// } 
 
 module.exports = {
     getAllCountries,
     getCountryByName,
     getCountryById,
-    postActivity
+    // postActivity
 }
