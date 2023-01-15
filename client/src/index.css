@@ -1,3 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --color-bg: #fbf6e4;
+  --color-bg-variant: #000910;
+  --color-primary: #021a2c;
+  --color-primary-variant: #32383b;
+  --color-light: rgb(238, 223, 187);
+
+  --transition: all 400 ease;
+
+  --container-whidth-lg: 75%;
+  --container-whidth-md: 86%;
+  --container-whidth-ms: 90%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

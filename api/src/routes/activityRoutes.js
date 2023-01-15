@@ -1,5 +1,4 @@
 const {Router} = require('express');
-const {postActivity} = require('../controllers');
 const {Activity, Country} = require('../db')
 const router = Router();
 

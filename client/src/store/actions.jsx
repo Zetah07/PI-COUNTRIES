@@ -12,7 +12,7 @@ export const GET_SELECT_ACTIVITY = 'GET_SELECT_ACTIVITY';
 
 export const getAllCountries = () => async dispatch =>{
     try{
-        let contriesData = await axios.get('./countries')
+        let contriesData = await axios.get('/countries')
         return dispatch({type:GET_COUNTRIES, payload:contriesData.data})
     }catch(error){
         return dispatch({type:ERROR, payload:error})
@@ -20,7 +20,7 @@ export const getAllCountries = () => async dispatch =>{
 }
 export const getCountryByName = (value) => async dispatch =>{
     try{
-        let countryName = await axios.get(`./countries?name=${value}`)
+        let countryName = await axios.get(`/countries?name=${value}`)
         return dispatch({type:SEARCH, payload:countryName.data})
     }catch(error){
         return dispatch({type:ERROR, payload:error})
@@ -28,7 +28,7 @@ export const getCountryByName = (value) => async dispatch =>{
 }
 export const getActivities = () => async dispatch =>{
     try{
-        let activities = await axios.get('./activities')
+        let activities = await axios.get('/activities')
         return dispatch({type:GET_ACTIVITIES, payload:activities.data})
     }catch(error){
         return dispatch({type:ERROR, payload:error})

@@ -1,0 +1,24 @@
+.machine__write {
+  display: block;
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 4px solid;
+  color: var(--color-primary);
+  margin: 0 auto;
+  
+
+  animation: typing 1.5s steps(15), blink 0.25s infinite step-end alternate;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
