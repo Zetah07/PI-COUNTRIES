@@ -1,0 +1,121 @@
+.container{
+    background-color: var(--color-bg-primary);
+    height: 65px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+a{
+    text-decoration: none;
+}
+.flex{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo:hover img {
+    filter: drop-shadow(0 0 5px rgb(46, 224, 247));
+
+}
+.img {
+    height: 50px;
+    margin-right: 10px;
+}
+.title{
+    font-size: 18px;
+    color: #f4f4f4;
+    user-select: none;
+    color:var(--color-light);
+}
+.title:hover{
+    color:var(--color-primary);
+    cursor: pointer;
+}
+.button{
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+    color: var(--color-primary)
+}
+.button:hover {
+    filter: brightness(110%);
+}
+
+.button:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.button:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.button:focus:not(:focus-visible) {
+    outline: none;
+}
+.shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to left,
+            #979797 0%,
+            #a7a7a7 8%,
+            #a7a7a7 92%,
+            #979797 100%);
+}
+.front {
+    display: block;
+    position: relative;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #9ee7ff;
+    color: #31696d;
+    background: #dddddd;
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+

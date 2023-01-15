@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,11 +11,13 @@
 }
 
 :root {
-  --color-bg: #fbf6e4;
-  --color-bg-variant: #000910;
-  --color-primary: #021a2c;
-  --color-primary-variant: #32383b;
-  --color-light: rgb(238, 223, 187);
+  --color-bg: #0a0f17;
+  --color-bg-variant: #fbf6e4;
+  --color-primary: #eedfbb;
+  --color-primary-variant: #021a2c;
+  --color-secondary: #32383b;
+  --color-light: rgb(202, 240, 189);
+  --color-light-variant: #186a7c;
 
   --transition: all 400 ease;
 
@@ -22,16 +26,106 @@
   --container-whidth-ms: 90%;
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-white);
+  line-height: 1.7;
+  background-color:var(--color-bg);
+  background-size: cover;
+}
+
+/*estilos generales*/
+
+.container {
+  max-width: var(--container-whidth-lg);
+  margin: 0 auto;
+}
+section {
+  margin-top: 8rem;
+  height: 100%;
+}
+a {
+  color: var(--color-primary);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-white);
+}
+
+.btn {
+  width: max-content;
+  display: inline-block;
+  color: var(--color-primary);
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid var(--color-primary);
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--color-white);
+  color: var(--color-light);
+  border-color: transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border-color: transparent;
+}
+.sidebar-btn{
+  width:100%;
+  display:inline-block;
+  background-color:transparent;
+  padding:0.4rem;
+  border-radius:0.1rem;
+  cursor:pointer;
+  color:var(--color-primary);
+}
+
+.sidebar-btn:hover {
+  background-color: var(--color-primary-variant);
+  color: var(--color-light);
+  border-color: transparent;
+  opacity: 0.5;
+}
+
+
+
+/*dispositivos medios 1024 px*/
+
+@media (max-width: 1024px) {
+  .container {
+    width: var(--container-whidth-md);
+  }
+
+  section {
+    margin-top: 6rem;
+  }
+}
+
+/*dispositivos pequeños 600 px*/
+
+@media (max-width: 600px) {
+  .container {
+    width: var(--container-whidth-sm);
+  }
+
+  section > h2 {
+    margin-bottom: 2rem;
+  }
 }

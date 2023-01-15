@@ -1,0 +1,180 @@
+.container {
+    box-sizing: border-box;
+    background-color: #0a0f17;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 80px;
+
+}
+
+.left {
+    padding: 0 200px 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: var(--color-light);
+    font-size: 72px;
+}
+
+.p {
+    color: #c5c5c5;
+    font-size: 20px;
+    margin: 50px 0;
+    line-height: 28px;
+}
+
+.button {
+    color: #090909;
+    padding: 16px 38px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    box-shadow: 5px 5px 12px #070707,
+        -5px -5px 12px #000000;
+}
+
+.button:hover {
+    background: #c5c5c5;
+    border: 1px solid white;
+    box-shadow: 4px 4px 12px #000000,
+        -4px -4px 12px #000000;
+    cursor: pointer;
+}
+
+.button:active {
+    box-shadow: 2px 2px 12px #c5f5fd,
+        -2px -2px 12px #d2fdff;
+}
+
+.bg,
+.earth,
+.cloud1,
+.cloud2,
+.cloud3,
+.cloud4 {
+    position: absolute;
+}
+
+.bg {
+    top: 140px;
+    right: 280px;
+    height: 600px;
+}
+
+.earth {
+    height: 450px;
+    top: 200px;
+    right: 350px;
+    z-index: 20;
+}
+
+.cloud1,
+.cloud2,
+.cloud3,
+.cloud4 {
+    height: 210px;
+}
+
+/* .cloud1 {
+    top: 450px;
+    right: 450px;
+    z-index: 18;
+    animation: move2 10s infinite;
+
+} */
+
+.cloud1 {
+    top: 100px;
+    right: 600px;
+    z-index: 18;
+    animation: move1 10s alternate infinite;
+
+}
+
+.cloud2 {
+    top: 450px;
+    right: 450px;
+    z-index: 18;
+    animation: move2 13s ease-in-out infinite;
+
+}
+
+
+.cloud3 {
+    top: 150px;
+    right: 250px;
+    z-index: 22;
+    animation: move3 12s ease-in infinite;
+
+}
+
+.cloud4 {
+    top: 350px;
+    right: 80px;
+    z-index: 22;
+    animation: move4 12s ease-in infinite;
+
+}
+
+@keyframes move1 {
+    0% {
+        right: 600px;
+    }
+
+    50% {
+        right: 650px;
+    }
+
+    100% {
+        right: 600px;
+    }
+}
+
+@keyframes move2 {
+    0% {
+        right: 650px;
+    }
+
+    50% {
+        right: 750px;
+    }
+
+    100% {
+        right: 650px;
+    }
+}
+
+@keyframes move3 {
+    0% {
+        right: 250px;
+    }
+
+    50% {
+        right: 350px;
+    }
+
+    100% {
+        right: 250px;
+    }
+}
+
+@keyframes move4 {
+    0% {
+        right: 80px;
+    }
+
+    50% {
+        right: 160px;
+    }
+
+    100% {
+        right: 80px;
+    }
+}

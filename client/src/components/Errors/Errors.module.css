@@ -1,0 +1,91 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0a0f176c;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    z-index: 200;
+}
+
+.card {
+    border-radius: 15px;
+    width: 600px;
+    background-color: #0a0f17;
+    box-shadow: #64646f33 0 7px 29px 0;
+    padding: 10px 25px 20px 25px;
+}
+
+.flex {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 15px;
+
+}
+
+.button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.btn:hover {
+    color: rgb(2, 211, 248);
+    cursor: pointer;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+}
+
+
+.status {
+    display: flex;
+    justify-content: space-around;
+    max-height: 250px;
+    padding: 0 50px 20px 50px;
+
+}
+
+.h2 {
+    color: aliceblue;
+    font-size: 250px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 0;
+    position: relative;
+    top: -60px;
+    animation: blinks .5s infinite step-end alternate;
+
+}
+
+.icon {
+    height: 200px;
+    position: relative;
+    top: 30px;
+    animation: blink .5s infinite step-end alternate;
+    color:var(--color-light-variant);
+}
+
+@keyframes blink {
+    50% {
+        filter: drop-shadow(0 0 5px rgb(46, 224, 247))
+    }
+}
+
+@keyframes blinks {
+    50% {
+        filter: drop-shadow(0 0 4px rgb(0, 255, 110))
+    }
+}

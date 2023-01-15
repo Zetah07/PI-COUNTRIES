@@ -46,7 +46,7 @@ export const getContinents = (payload) => async dispatch =>{
 export const getSelectActivity = (payload) => async dispatch =>{
     return dispatch({type:GET_SELECT_ACTIVITY, payload})
 }
-export const close = () => async dispatch =>{
+export const errorClosed = () => async dispatch =>{
     return dispatch({type:CLOSE})
 }
 export const checking = () => async dispatch =>{

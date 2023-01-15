@@ -1,0 +1,28 @@
+.footer__cont{
+    background-color: var(--color-bg-variant);
+    color: var(--color-primary-variant);
+    width: 100%;
+    height: 120px;
+    text-align: center;
+}
+.icon{
+    text-decoration: none;
+    color: var(--color-primary-variant);
+    display: inline-block;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+.icon:hover{
+    transform: scale(1.3);
+    transition: var(--transition);
+    filter: saturate(200%);
+    cursor: pointer;
+}
+.text__container{
+    padding-top: 3px;
+}
+.icon__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

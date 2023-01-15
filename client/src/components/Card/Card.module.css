@@ -1,0 +1,17 @@
+.container{
+
+}
+.img{
+    border-radius: 1rem;
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.textContainer{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
