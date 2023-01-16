@@ -24,6 +24,8 @@ let title = 'Welcome My Individual Proyect';
   const dispatch = useDispatch();
   const sorting = useSelector (state => state.sorting);
   const error = useSelector (state => state.error);
+
+  
   // const countries = useSelector (state => state.countries);
   const activities = useSelector (state => state.activities);
   const check = useSelector (state => state.check)
