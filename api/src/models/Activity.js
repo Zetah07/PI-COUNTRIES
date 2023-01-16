@@ -14,18 +14,22 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       difficulty: {
-        type: DataTypes.ENUM("1", "2", "3", "4", "5"),
+        type: DataTypes.INTEGER,
+        validate:{
+          min: 1,
+          max: 5,
+        }
       },
       duration: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
       },
       season: {
         type: DataTypes.ENUM("Summer", "Autumn", "Winter", "Spring"),
       },
-      country: {
-        type: DataTypes.ARRAY(DataTypes.STRING),
-        allowNull: false,
-      },
+      // country: {
+      //   type: DataTypes.ARRAY(DataTypes.STRING),
+      //   allowNull: false,
+      // },
     },
     { timestamps: false }
   );
