@@ -71,8 +71,6 @@ let title = 'Welcome My Individual Proyect';
                     <Pagination current={current} setCurrent={setCurrent} max={max} input={input} setInput={setInput} />
                 </div> : <Loader />
             }
-
-
     </div>
     </>
     )
