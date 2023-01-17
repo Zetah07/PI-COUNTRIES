@@ -1,6 +1,5 @@
 .container {
     box-sizing: border-box;
-    background-color: #0a0f17;
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -63,15 +62,15 @@
 }
 
 .bg {
-    top: 140px;
-    right: 280px;
+    top: 6rem;
+    right:4.3rem;
     height: 600px;
 }
 
 .earth {
-    height: 450px;
+    height: 20rem;
     top: 200px;
-    right: 350px;
+    right: 10rem;
     z-index: 20;
 }
 
@@ -79,20 +78,13 @@
 .cloud2,
 .cloud3,
 .cloud4 {
-    height: 210px;
+    height: 4rem;
 }
 
-/* .cloud1 {
-    top: 450px;
-    right: 450px;
-    z-index: 18;
-    animation: move2 10s infinite;
-
-} */
 
 .cloud1 {
-    top: 100px;
-    right: 600px;
+    top: 6rem;
+    right:-4rem;
     z-index: 18;
     animation: move1 10s alternate infinite;
 
@@ -100,7 +92,7 @@
 
 .cloud2 {
     top: 450px;
-    right: 450px;
+    right: 300px;
     z-index: 18;
     animation: move2 13s ease-in-out infinite;
 
@@ -108,7 +100,7 @@
 
 
 .cloud3 {
-    top: 150px;
+    top: 180px;
     right: 250px;
     z-index: 22;
     animation: move3 12s ease-in infinite;
@@ -117,7 +109,7 @@
 
 .cloud4 {
     top: 350px;
-    right: 80px;
+    right: 180px;
     z-index: 22;
     animation: move4 12s ease-in infinite;
 

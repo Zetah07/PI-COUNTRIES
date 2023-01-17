@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCountries, checking } from "../../actions/actions";
+import { getAllCountries, checking } from "../../store/actions";
 import axios from "axios";
 import Style from "./Create.module.css";
 import { AiOutlineClose } from "react-icons/ai";
@@ -21,7 +21,7 @@ const Create = ({ setForm }) => {
 
   useEffect(() => {
     setError(validateCreate(create));
-    if (!sorting[0]) dispatch(getCountries());
+    if (!sorting[0]) dispatch(getAllCountries());
   }, [dispatch, sorting, create]);
 
   const validateCreate = (create) => {

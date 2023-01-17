@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { getAllCountries, getCountryByName, getCountryById } = require('../controllers/controller');
+const { getAllCountries, getCountryByName, getCountryById, getCountrieswithActivites } = require('../controllers/controller');
 const router = Router();
 
 router.get('/', async (req, res)=>{
@@ -20,7 +20,8 @@ router.get('/', async (req, res)=>{
 router.get('/:id', async (req, res)=>{
     const{id}= req.params;
     try{
-        const getId = await getCountryById(id)
+        const whitActivity = await getCountrieswithActivites()
+        const getId = await getCountryById(id, whitActivity)
         res.status(200).send(getId);
     } catch (error){
         res.status(404).send(error);

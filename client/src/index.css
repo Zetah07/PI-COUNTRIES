@@ -16,7 +16,7 @@
   --color-bg-variant: #fbf6e4;
   --color-primary: #eedfbb;
   --color-primary-variant: #021a2c;
-  --color-secondary: #32383b;
+  --color-secondary: #128db2;
   --color-light: rgb(202, 240, 189);
   --color-light-variant: #186a7c;
 
@@ -78,9 +78,9 @@ a:hover {
 }
 
 .btn:hover {
-  background-color: var(--color-white);
+  background-color: var(--color-bg);
   color: var(--color-light);
-  border-color: transparent;
+  border-color:var(--color-primary);
 }
 
 .btn-primary {

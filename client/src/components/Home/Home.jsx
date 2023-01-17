@@ -33,7 +33,7 @@ let title = 'Welcome My Individual Proyect';
   const [sort, setSort] = useState('name');
   const [input, setInput] = useState('');
   const [current, setCurrent] = useState(1);
-  const perPage = 9;
+  const [perPage] = useState(9);
   const max = Math.ceil(sorting.length / perPage);
 
 
@@ -48,8 +48,8 @@ let title = 'Welcome My Individual Proyect';
 
   return (
     <> 
-      <div className={Style.container}>
       <TitleWrite title={title} />
+      <div className={Style.container}>
       {sorting.length ?
                 <div>
                     <Nav setForm={setForm} />

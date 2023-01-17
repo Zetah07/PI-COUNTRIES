@@ -3,6 +3,7 @@ import { errorClosed } from "../../store/actions";
 import Style from "./Check.module.css";
 import { useDispatch } from "react-redux";
 import { FiCheckCircle } from "react-icons/fi";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Check = () => {
   const dispatch = useDispatch();
@@ -14,8 +15,8 @@ const Check = () => {
     <div className={Style.container}>
       <div className={Style.target}>
         <div className={Style.item}>
-          <button className="btn btn-danger" onClick={handleClick}>
-            X
+          <button className={Style.button} onClick={handleClick}>
+            <AiOutlineClose/>
           </button>
         </div>
         <div className={Style.text}>

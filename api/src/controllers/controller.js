@@ -10,8 +10,8 @@ const getCountries = async () => {
         name: country.name.common,
         flag: country.flags[0],
         continent: country.continents[0],
-        capital: country.capital,
-        subregion: country.subregion,
+        capital: country.capital ? country.capital : "None",
+        subregion: country.subregion ? country.subregion : "None",
         area: country.area,
         population: country.population,
       };
@@ -67,7 +67,7 @@ const getCountryByName = async (name) => {
 
 const getCountryById = async (id) => {
   const api = await axios.get(`http://restcountries.com/v3/alpha/${id}`);
-  const result = api.data.results?.map((country) => {
+  const result = api.data?.map((country) => {
     return {
       id: country.cca3,
       name: country.name.common,
@@ -82,18 +82,37 @@ const getCountryById = async (id) => {
   return result;
 };
 
-// const postActivity = async (name, difficulty, duration, season) => {
-//   const newActivity = await Activity.create({
-//     name,
-//     difficulty,
-//     duration,
-//     season,
-//   });
-//   return newActivity;
-// };
+const getCountrieswithActivites = async function (){
+  const data = await Country.findAll({
+      include:{
+          model: Activity,
+          attributes: ["name","difficulty","duration","season"],
+          through:{
+                  attributes:[],
+                  }
+          },
+      });
+  return data;
+}
 
+const addActivitytoCountry = async (name,difficulty,duration,season, country) =>{
+    let newActtivity = await Activity.create({
+        name,
+        difficulty,
+        duration,
+        season,
+    });
+   const countries_activity = await Country.findAll({
+        where: {
+                name: country,
+          },
+    });
+    newActtivity.addCountry(countries_activity);
+}
 module.exports = {
   getAllCountries,
   getCountryByName,
   getCountryById,
+  getCountrieswithActivites,
+  addActivitytoCountry
 };

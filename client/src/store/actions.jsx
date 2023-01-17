@@ -52,5 +52,8 @@ export const errorClosed = () => async dispatch =>{
 export const checking = () => async dispatch =>{
     return dispatch({type:CHECKING})
 }
+export const deleteFilters = () => dispatch => {
+    return dispatch({ type: 'DELETE_FILTERS' })
+}
 
 

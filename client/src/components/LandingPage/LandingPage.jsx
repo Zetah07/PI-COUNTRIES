@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import TitleWrite from "../Share/TitleWrite";
 import s from "./LandingPage.module.css";
 import '../Share/Continents.css'
-import bg from "../../assets/bg.png";
+import bg from "../../assets/stars.png";
 import earth from "../../assets/earth.png";
 import cloud1 from "../../assets/cloud1.png";
 import cloud2 from "../../assets/cloud2.png";
