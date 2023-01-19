@@ -1,15 +1,39 @@
+.container {
+    width: 340px;
+    padding: 20px 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.img{
-    border-radius: 1rem;
-    width: 350px;
-    height: 200px;
+
+.img {
+    border-radius: 8px;
+    width: 310px;
+    height: 187px;
     object-fit: cover;
 }
 
-.textContainer{
-    padding: 1rem;
+.textBox {
+    padding-left: 30px;
+    width: 90%;
     display: flex;
+    margin-top: 2rem;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    align-items: flex-start;
+}
+
+.name {
+    font-size: 16.5px;
+    margin-top: 0.5rem;
+    line-height: 0.5;
+    color: var(--color-primary);
+}
+
+.continent {
+    font-size: 13px;
+    margin-top: 0.5rem;
+    color: var(--color-primary);
+    line-height: 0.5;
 }

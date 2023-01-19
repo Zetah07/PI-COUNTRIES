@@ -1,118 +1,93 @@
 const axios = require("axios");
-const { Country, Activity } = require("../db.js");
+const { Country, Activity } = require("../db");
 
-const getCountries = async () => {
+const getHome = async () => {
   try {
-    const api = await axios.get(`http://restcountries.com/v3/all`);
-    const result = api.data?.map((country) => {
+    let api = await axios.get("https://restcountries.com/v3/all");
+    api = api.data?.map((e) => {
       return {
-        id: country.cca3,
-        name: country.name.common,
-        flag: country.flags[0],
-        continent: country.continents[0],
-        capital: country.capital ? country.capital : "None",
-        subregion: country.subregion ? country.subregion : "None",
-        area: country.area,
-        population: country.population,
+        id: e.cca3,
+        name: e.name.common,
+        flag: e.flags[0],
+        continent: e.continents[0],
+        capital: e.capital,
+        subregion: e.subregion,
+        area: `${e.area}km2`,
+        population: e.population,
       };
     });
-    return result;
-  } catch (error) {
-    throw new Error("cannot get all countries", error);
-  }
-};
+    api = api.filter((e) => e.name !== "Moldova");
 
-const getAllCountries = async () => {
-  const countriesFromApi = await getCountries();
-  let result = await Country.findAll({
-    includes: {
-      model: Activity,
-      attributes: ["name"],
-      through: {
-        attributes: [],
-      },
-    },
-  });
-  const countriesFromDB = result?.map((country) => {
-    return {
-      id: country.id,
-      name: country.name,
-      flag: country.flag,
-      continent: country.continent,
-      capital: country.capital,
-      subregion: country.subregion,
-      area: country.area,
-      population: country.population,
-      activities: country.activities.map((activity) => activity.name),
-    };
-  });
-  return [...countriesFromApi, ...countriesFromDB];
-};
-
-const getCountryByName = async (name) => {
-  try {
-    const allCountries = await getAllCountries();
-    const filterName = allCountries.filter((country) =>
-      country.name.toLowerCase().includes(name.toLowerCase())
-    );
-    if (filterName.length > 0) {
-      return filterName;
-    } else {
-      throw new Error(`cannot get country ${name}`);
+    let bdd = await Country.findAll();
+    if (!bdd.length) {
+      await Country.bulkCreate(api);
     }
+    let db = await Country.findAll({
+      include: {
+        model: Activity,
+        attributes: ["name"],
+        through: {
+          attributes: [],
+        },
+      },
+    });
+
+    db = db.map((e) => {
+      return {
+        id: e.id,
+        name: e.name,
+        flag: e.flag,
+        continent: e.continent,
+        capital: e.capital,
+        subregion: e.subregion,
+        area: e.area,
+        population: e.population,
+        activity: e.activities?.map((el) => el.name),
+      };
+    });
+    return db;
   } catch (error) {
-    throw new Error(error);
+    console.log(error.message);
   }
 };
 
-const getCountryById = async (id) => {
-  const api = await axios.get(`http://restcountries.com/v3/alpha/${id}`);
-  const result = api.data?.map((country) => {
-    return {
-      id: country.cca3,
-      name: country.name.common,
-      flag: country.flags[0],
-      continent: country.continents[0],
-      capital: country.capital,
-      subregion: country.subregion,
-      area: country.area,
-      population: country.population,
-    };
-  });
-  return result;
+const getByName = async (name) => {
+  let api = await axios.get(`https://restcountries.com/v3/name/${name}`);
+  api = api.data[0];
+  api = {
+    id: api.cca3,
+    name: api.name.common,
+    flag: api.flags[1],
+    continent: api.continents[0],
+    capital: api.capital,
+    subregion: api.subregion,
+    area: `${api.area}km²`,
+    population: api.population,
+  };
+
+  return api;
 };
 
-const getCountrieswithActivites = async function (){
-  const data = await Country.findAll({
-      include:{
-          model: Activity,
-          attributes: ["name","difficulty","duration","season"],
-          through:{
-                  attributes:[],
-                  }
-          },
-      });
-  return data;
-}
+const getById = async (id) => {
+  let api = await axios.get(`https://restcountries.com/v3/alpha/${id}`);
+  api = api.data[0];
+  api = {
+    id: api.cca3,
+    name: api.name.common,
+    flag: api.flags[1],
+    continent: api.continents[0],
+    capital: api.capital,
+    subregion: api.subregion,
+    area: `${api.area}km²`,
+    population: api.population,
+  };
+  return api;
+};
 
-const addActivitytoCountry = async (name,difficulty,duration,season, country) =>{
-    let newActtivity = await Activity.create({
-        name,
-        difficulty,
-        duration,
-        season,
-    });
-   const countries_activity = await Country.findAll({
-        where: {
-                name: country,
-          },
-    });
-    newActtivity.addCountry(countries_activity);
-}
+
 module.exports = {
-  getAllCountries,
-  getCountryByName,
-  getCountryById,
-  getCountrieswithActivites,
-  addActivitytoCountry
+  getHome,
+  getByName,
+  getById,
+
 };

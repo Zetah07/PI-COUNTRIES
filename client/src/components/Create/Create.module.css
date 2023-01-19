@@ -1,7 +1,230 @@
-.container{
+.container {
     display: flex;
-    justify-content: center;
+    height: 100vh;
+    background-color: #0c4457;
+    width: 100vw;
+    position: absolute;
     align-items: center;
-    position:fixed;
+    justify-content: center;
     user-select: none;
+    z-index: 100;
+}
+
+.card {
+    background-color: transparent;
+    border-radius: 15px;
+    box-shadow: 5px 5px 12px var(--color-bg);
+
+}
+
+
+
+.close {
+    background:transparent;
+    border:#00bfff;
+    color: #00fff2;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 20px 20px 0 0;
+    line-height: 0;
+    position: relative;
+    top: 20px;
+    left: 480px;
+}
+
+.close:hover {
+    color: rgb(2, 211, 248);
+    cursor: pointer;
+}
+
+.column {
+    display: flex;
+    align-items: center;
+
+}
+
+.div {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.form {
+    box-sizing: border-box;
+    padding-left: 50px;
+    width: 520px;
+    height: 600px;
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+}
+
+.title {
+    color: var(--color-primary);
+    font-size: 32px;
+}
+
+.label {
+    color: var(--color-primary);
+    font-size: 18px;
+}
+
+.x {
+    padding-left: 10px;
+    background-color: var(--color-primary);
+}
+
+.input {
+    background: #001b24;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 5px;
+    font-size: 16px;
+    width: 200px;
+    height: 22px;
+}
+
+.input:focus {
+    border: 1px solid var(--color-primary)
+}
+
+.error {
+    background: #ff0000;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 5px;
+    font-size: 16px;
+    width: 200px;
+    height: 22px;
+}
+
+
+.flagBox {
+    margin-right: 30px;
+    padding: 10px 20px;
+    height: 50px;
+}
+
+.span {
+    color: #dddddd;
+}
+
+.btnDelete {
+    font-size: 14px;
+    color: #dddddd;
+    font-weight: bold;
+    background-color: #0a0f17;
+    border: none;
+}
+
+.btnDelete:hover {
+    cursor: pointer;
+    color: red;
+}
+
+
+.btn {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+    top: 50px;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to left,
+            #979797 0%,
+            #a7a7a7 8%,
+            #a7a7a7 92%,
+            #979797 100%);
+}
+
+
+.front {
+    display: block;
+    position: relative;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #9ee7ff;
+    color: rgb(49, 105, 109);
+    background: #dddddd;
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.btn:hover {
+    filter: brightness(110%);
+}
+
+.btn:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.btn:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.btn:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.btn:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.btn:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
+
+
+
+
+
+.flagBox button {
+    background-color: #0a0f17;
+    border: none;
+}
+
+.flag {
+    height: 35px;
+    width: 65px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.flag:hover {
+    opacity: .5;
+    cursor: pointer;
 }

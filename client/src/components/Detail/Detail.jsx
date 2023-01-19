@@ -1,47 +1,45 @@
-import React, { useEffect, useState }from 'react';
-import {useParams, Link} from 'react-router-dom';
-import axios from 'axios';
-import Style from './Detail.module.css';
-import Loader from '../Loader/Loader';
-import {AiOutlineClose} from 'react-icons/ai';
-
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import axios from "axios";
+import s from "./Detail.module.css";
+import Loader from "../Loader/Loader";
+// import { AiOutlineClose } from "react-icons/ai";
 
 const Detail = () => {
+  const [country, setCountry] = useState()
+    let { id } = useParams()
+    useEffect(() => {
+        axios.get(`/countries/${id}`)
+            .then(res => setCountry(res.data))
 
-  const [country, setCountry] = useState();
-  let{id} =useParams();
-
-  useEffect(() => {
-    axios.get(`/countries/${id}`)
-    .then(responsy => setCountry(responsy.data))
-  }, [id]);
+    }, [id])
 
   return (
-    <div className={Style.container} >
-    {country ? 
-    <div className={Style.target} >
-      <div className={Style.flex} >
-        <h3>{country.id}</h3>
-        <Link to='/home'>
-          <button className={Style.button} ><AiOutlineClose/></button>
-        </Link>
-      </div>
-      <img className={Style.flag} src={country.flag} alt={country.name} />
-      <h3 className={Style.name} >{country.name}</h3>
-      <div className={Style.info} >
-        <h4>Population: <span className={Style.span}>{country.population}</span> </h4>
-        <h4>Continent: <span className={Style.span}>{country.continent}</span> </h4>
-        <h4>Subregion: <span className={Style.span}>{country.subregion}</span></h4>
-        <h4>Area: <span className={Style.span}>{country.area}</span></h4>
-        <h4>Capital: <span className={Style.span}>{country.capital}</span></h4>
-      </div>
-      </div>
-      :
+    <div className={s.container}>
+    {
+        country ?
+            <div className={s.card}>
+                <div className={s.flex}>
+                    <h3>{country.id}</h3>
+                    <Link to='/home'>
+                        <button className={s.btn}>X</button>
+                    </Link>
+                </div>
+                <img className={s.flag} src={country.flag} alt={country.name} />
+                <h3 className={s.title}>{country.name}</h3>
+                <div className={s.grid}>
+                    <h4>Population: <span className={s.span}>{country.population}</span> </h4>
+                    <h4>Continent: <span className={s.span}>{country.continent}</span></h4>
+                    <h4>Subregion: <span className={s.span}> {country.subregion}</span></h4>
+                    <h4>Area: <span className={s.span}>{country.area}</span></h4>
+                    <h4>Capital: <span className={s.span}>{country.capital}</span></h4>
+                </div>
+            </div>
+            : (
         <Loader />
-      }
-      </div>
-    
-  )
-}
+      )}
+    </div>
+  );
+};
 
-export default Detail
+export default Detail;

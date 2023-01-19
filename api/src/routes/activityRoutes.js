@@ -1,30 +1,35 @@
-const {Router} = require('express');
-const {Activity} = require('../db');
-const {addActivitytoCountry} = require('../controllers/controller');
+const { Router } = require('express');
+//const { postActivity } = require('./controller');
 const router = Router();
+const { Activity, Country } = require('../db')
 
 router.get('/', async (req, res) => {
-    try{
-    const getAll = await Activity.findAll()
-    res.status(200).send(getAll)
-    }catch(error){
+    try {
+        let getAll = await Activity.findAll()
+        res.send(getAll)
+    } catch (error) {
         res.status(404).send(error)
     }
 })
 
-router.post('/', async (req,res) => {
-    try{
-        const {name,difficulty,duration,season, country} = req.body;
-        if(!name || !difficulty || !duration || !season || !country){
-        res.status(404).json("No se enviaron los datos necesarios");   
-        }else{
-            await addActivitytoCountry(name,difficulty,duration,season, country);
-            res.status(201).send("Se agregó la actividad correctamente");
-        }
-    }catch(error){
-        res.status(404).send(error.message);   
+router.post('/', async (req, res) => {
+    const { name, difficulty, duration, season, country, /* flags */ } = req.body;
+    try {
+        let newActivity = await Activity.create({ name, difficulty, duration, season, /* country, */ /* flags */ })
+
+        let countryDb = await Country.findAll({
+            where: { name: country }
+        })
+
+        console.log(country)
+
+        newActivity.addCountry(countryDb)
+
+        res.send('Activity created successfully')
+    } catch (error) {
+        res.status(404).send(error)
     }
-});
+})
+
 
 module.exports = router;
-

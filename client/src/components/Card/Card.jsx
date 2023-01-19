@@ -5,11 +5,11 @@ import Style from "./Card.module.css";
 const Card = ({ id, flag, name, continent }) => {
   return (
     <Link to={`/home/${id}`}>
-      <div>
+      <div className={Style.container}>
         <img src={flag} alt={name} className={Style.img} />
         <div className={Style.textContainer}>
-          <h2>{name}</h2>
-          <h3>{continent}</h3>
+          <h2 className={Style.name} >{name}</h2>
+          <h3 className={Style.continent} >{continent}</h3>
         </div>
       </div>
     </Link>

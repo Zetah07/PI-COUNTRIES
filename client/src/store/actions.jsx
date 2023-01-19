@@ -11,13 +11,22 @@ export const GET_ACTIVITIES = 'GET_ACTIVITIES';
 export const GET_SELECT_ACTIVITY = 'GET_SELECT_ACTIVITY';
 
 export const getAllCountries = () => async dispatch =>{
-    try{
-        let contriesData = await axios.get('/countries')
-        return dispatch({type:GET_COUNTRIES, payload:contriesData.data})
-    }catch(error){
-        return dispatch({type:ERROR, payload:error})
+    try {
+        let json = await axios.get('/countries')
+        return dispatch({ type: GET_COUNTRIES, payload: json.data })
+    } catch (error) {
+        console.log(error.message)
     }
 }
+export const getActivities = () => async dispatch => {
+    let json = await axios.get('/activities')
+    return dispatch({ type: GET_ACTIVITIES, payload: json.data })
+}
+
+export const getSelectActivity = (payload) => dispatch => {
+    return dispatch({ type: GET_SELECT_ACTIVITY, payload })
+}
+
 export const getCountryByName = (value) => async dispatch =>{
     try{
         let countryName = await axios.get(`/countries?name=${value}`)
@@ -26,32 +35,27 @@ export const getCountryByName = (value) => async dispatch =>{
         return dispatch({type:ERROR, payload:error})
     }
 }
-export const getActivities = () => async dispatch =>{
-    try{
-        let activities = await axios.get('/activities')
-        return dispatch({type:GET_ACTIVITIES, payload:activities.data})
-    }catch(error){
-        return dispatch({type:ERROR, payload:error})
-    }
+
+export const getSort = (payload) => dispatch => {
+    return dispatch({ type: GET_SORT, payload })
 }
-export const getSort = (payload) => async dispatch =>{
-    return dispatch({type:GET_SORT, payload})
+
+export const getPopulation = (payload) => dispatch => {
+    return dispatch({ type: POPULATION, payload })
 }
-export const getPopulation = (payload) => async dispatch =>{
-    return dispatch({type:POPULATION, payload})
+
+export const getContinents  = payload => dispatch => {
+    return dispatch({ type: CONTINENTS, payload })
 }
-export const getContinents = (payload) => async dispatch =>{
-    return dispatch({type:CONTINENTS, payload})
+
+export const errorClosed = () => dispatch => {
+    return dispatch({ type: CLOSE })
 }
-export const getSelectActivity = (payload) => async dispatch =>{
-    return dispatch({type:GET_SELECT_ACTIVITY, payload})
+
+export const checking = () => dispatch => {
+    return dispatch({ type: CHECKING })
 }
-export const errorClosed = () => async dispatch =>{
-    return dispatch({type:CLOSE})
-}
-export const checking = () => async dispatch =>{
-    return dispatch({type:CHECKING})
-}
+
 export const deleteFilters = () => dispatch => {
     return dispatch({ type: 'DELETE_FILTERS' })
 }

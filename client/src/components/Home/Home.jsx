@@ -18,7 +18,7 @@ import Loader from '../Loader/Loader';
 function Home() {
 
   //title interactive
-let title = 'Welcome My Individual Proyect';
+let title = 'Welcome My Individual Project';
 
 //ordering and filter
   const dispatch = useDispatch();
@@ -35,7 +35,6 @@ let title = 'Welcome My Individual Proyect';
   const [current, setCurrent] = useState(1);
   const [perPage] = useState(9);
   const max = Math.ceil(sorting.length / perPage);
-
 
   useEffect(() => {
     if(!sorting[0]) {
