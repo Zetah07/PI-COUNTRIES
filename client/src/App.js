@@ -1,27 +1,24 @@
-import "./App.css";
-import { Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage/LandingPage";
-import Home from "./components/Home/Home";
-import Detail from "./components/Detail/Detail";
-import Create from "./components/Create/Create";
+import { Route } from 'react-router-dom';
+import Home from './components/Home/Home';
+import './App.css';
+import LandingPage from './components/LandingPage/LandingPage';
+import Detail from './components/Detail/Detail';
+import { About } from './components/About/About';
 
 function App() {
   return (
     <div className="App">
-      <Route exact path="/">
+      <Route exact path='/'>
         <LandingPage />
       </Route>
-      <Route path="/home">
-        <Home />
-      </Route>
-      <Route path="/home/:id">
+      <Route path='/home/:id'>
         <Detail />
       </Route>
-      <Route path="/create">
-        <Create />
+      <Route path='/home' >
+        <Home />
       </Route>
-      <Route path="/about">
-        <h1>About</h1>
+      <Route path='/about'>
+        <About/>
       </Route>
     </div>
   );

@@ -1,29 +1,33 @@
-.input{
+.input {
+    font-family: "Segoe UI", "Roboto", sans-serif;
     font-weight: 500;
-    font-size: 0.99rem;
-    color: var(--color-primary);
-    background-color: var(--color-bg-primary);
+    font-size: 14px;
+    color: #fff;
+    background-color: #0a0f17;
+    box-shadow: 0 0 5px #fbfbfb66, 0 0 0 5px transparent;
+    border-radius: 5px 0 0 5px;
     border: none;
-    border-radius: 0.4rem 0 0 0.4rem;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
-    padding: 0.52vw;
     outline: none;
-    width: 55%;
-    transition:var(--transition);
-}
-.input:hover{
-    box-shadow: 0 0 0 2px rgb(33, 53, 26);
-}
-.input:focus{
-    box-shadow: 0 0 0 2px rgb(167, 255, 138);
+    padding: 0.4vw;
+    width: 320px;
+    transition: .4s;
 }
 
-.searchButton{
-    background-color: var(--color-bg-variant);
+.input:hover {
+    box-shadow: 0 0 0 2px #8adcfc5f;
+}
+
+.input:focus {
+    box-shadow: 0 0 0 2px #8dddfcf5;
+}
+
+
+.searchBtn {
+    background-color: #dddddd;
     padding: 8.5px 8px;
-    border: 1px solid var(--color-bg-variant);
+    border: 1px solid #dddddd;
     border-radius: 0 8px 8px 0;
-    color: var(--color-light-variant);
+    color: #31696d;
     text-shadow: 1px 1px 2px #9ee7ff;
     font-weight: bold;
     font-size: 15px;
@@ -31,10 +35,8 @@
     top: -1px;
     left: 2.5px;
 }
-.searchButton:hover{
-    background-color: var(--color-bg-variant);
-    border: 1px solid var(--color-bg-variant);
-    color: #186a7c;
-    text-shadow: 1px 1px 2px #9ee7ff;
+
+.searchBtn:hover {
     cursor: pointer;
+    background-color: #c0c0c0;
 }

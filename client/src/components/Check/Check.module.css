@@ -1,47 +1,68 @@
-.container{
+.container {
     width: 100vw;
     height: 100vh;
+    background-color: #0a0f176c;
+    position: fixed;
     display: flex;
-    justify-content: center;
     align-items: center;
-    position:fixed;
+    justify-content: center;
     user-select: none;
     z-index: 200;
 }
-.target{
-    border-radius: 2rem;
-    width: 80%;
+
+.card {
+    border-radius: 15px;
+    width: 600px;
+    background-color: #0a0f17;
     box-shadow: #64646f33 0 7px 29px 0;
     padding: 10px 25px 20px 25px;
 }
-.item{
-    display:flex;
+
+.flex {
+    display: flex;
     justify-content: flex-end;
     padding-bottom: 15px;
+
 }
-.button{
-    background:none;
-    border:none;
-    color: var(--color-light);
-    font-size: 1.5rem;
+
+.btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 15px;
     font-weight: bold;
-    padding-top: 0.9rem;
+    padding-top: 10px;
 }
-.button:hover{
-    color: var(--color-secundary);
+
+.btn:hover {
+    color: rgb(2, 211, 248);
     cursor: pointer;
 }
-.text{
+
+.title {
     display: flex;
     justify-content: center;
 }
-.h1{
+
+.h1 {
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
     text-transform: uppercase;
 }
-.icon{
+
+
+.status {
+    display: flex;
+    justify-content: space-around;
+    max-height: 250px;
+    padding: 0 50px 20px 50px;
+
+}
+
+.img {
     height: 200px;
     position: relative;
     top: 30px;
     animation: blink .5s infinite step-end alternate;
     padding-bottom: 40px;
-} 
+}

@@ -1,5 +1,5 @@
-.container{
-    background-color: var(--color-bg-primary);
+.container {
+    background-color: #070b14;
     height: 65px;
     display: flex;
     align-items: center;
@@ -7,39 +7,47 @@
     width: 100%;
     z-index: 100;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.flex{
+
+.flex {
     width: 70%;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.logo{
+
+.logo {
     display: flex;
     align-items: center;
 }
+
 .logo:hover img {
     filter: drop-shadow(0 0 5px rgb(46, 224, 247));
 
 }
+
 .img {
     height: 50px;
     margin-right: 10px;
 }
-.title{
+
+.title {
+    font-family: monospace;
     font-size: 18px;
     color: #f4f4f4;
     user-select: none;
-    color:var(--color-light);
 }
-.title:hover{
-    color:var(--color-primary);
+
+.title:hover {
     cursor: pointer;
 }
-.button{
+
+
+.btn {
     position: relative;
     border: none;
     background: transparent;
@@ -49,36 +57,9 @@ a{
     transition: filter 250ms;
     user-select: none;
     touch-action: manipulation;
-    color: var(--color-primary)
-}
-.button:hover {
-    filter: brightness(110%);
 }
 
-.button:hover .front {
-    transform: translateY(-6px);
-    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-}
-
-.button:active .front {
-    transform: translateY(-2px);
-    transition: transform 34ms;
-}
-
-.button:hover .shadow {
-    transform: translateY(4px);
-    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-}
-
-.button:active .shadow {
-    transform: translateY(1px);
-    transition: transform 34ms;
-}
-
-.button:focus:not(:focus-visible) {
-    outline: none;
-}
-.shadow{
+.shadow {
     position: absolute;
     top: 0;
     left: 0;
@@ -91,7 +72,7 @@ a{
     transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
 }
 
-.edge{
+.edge {
     position: absolute;
     top: 0;
     left: 0;
@@ -104,6 +85,8 @@ a{
             #a7a7a7 92%,
             #979797 100%);
 }
+
+
 .front {
     display: block;
     position: relative;
@@ -119,3 +102,30 @@ a{
     transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
 }
 
+.btn:hover {
+    filter: brightness(110%);
+}
+
+.btn:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.btn:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.btn:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.btn:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.btn:focus:not(:focus-visible) {
+    outline: none;
+}

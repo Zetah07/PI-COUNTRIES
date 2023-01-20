@@ -1,42 +1,51 @@
-.container{
+.container {
     position: fixed;
     bottom: 0;
     left: 44%;
     height: 45px;
     border-radius: 20px 20px 0 0;
     width: 250px;
+    background-color: #0a0f17;
+    color: aliceblue;
     display: flex;
     justify-content: space-around;
     align-items: center;
+
 }
-.button{
-    border:none;
-    margin: 0 auto;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-weight:bold;
+
+.btn {
+    border: none;
+    margin: 0 20px;
+    padding: 4px 9px;
+    border-radius: 5px;
+    font-weight: bold;
     font-size: 17px;
-    color: var(--color-primary);
+    color: aliceblue;
+    background-color: #0a0f17;
     user-select: none;
 }
-.button:hover{
-    background-color: var(--color-primary);
-    color: var(--color-white);
+
+.btn:hover {
     cursor: pointer;
+    background-color: #151921da;
+    color: #02d3f8;
 }
-.button:disabled{
-    color: var(--color-primary);
+
+.btn:disabled {
+    color: #0a0f17;
+}
+
+.btn:disabled:hover {
+    background-color: #0a0f17;
     cursor: auto;
 }
-.button:disabled:hover{
-    background-color: transparent;
-    color: var(--color-primary);
-    cursor: auto;
-}
-.input{
-    width:20px;
-    border-radius:5px;
-    border: 1px solid var(--color-primary);
+
+.input {
+    width: 20px;
+    border-radius: 5px;
+    border: none;
     padding: 3px;
-    font-size: 17px;
+    font-size: 16px;
+    background-color: #0a0f17;
+    color: aliceblue;
 }

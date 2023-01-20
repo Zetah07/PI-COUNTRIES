@@ -1,28 +1,28 @@
 .container {
     display: flex;
     height: 100vh;
-    background-color: #0c4457;
     width: 100vw;
-    position: absolute;
+    position: fixed;
     align-items: center;
     justify-content: center;
+    background-color: #0a0f176d;
+    z-index: 300;
     user-select: none;
-    z-index: 100;
 }
 
 .card {
-    background-color: transparent;
+    background-color: #0a0f17;
     border-radius: 15px;
-    box-shadow: 5px 5px 12px var(--color-bg);
+    box-shadow: 5px 5px 12px #0a0f17;
 
 }
 
 
 
 .close {
-    background:transparent;
-    border:#00bfff;
-    color: #00fff2;
+    background: none;
+    border: none;
+    color: white;
     font-size: 15px;
     font-weight: bold;
     padding: 20px 20px 0 0;
@@ -59,24 +59,23 @@
 }
 
 .title {
-    color: var(--color-primary);
+    color: aliceblue;
     font-size: 32px;
 }
 
 .label {
-    color: var(--color-primary);
+    color: aliceblue;
     font-size: 18px;
 }
 
 .x {
     padding-left: 10px;
-    background-color: var(--color-primary);
 }
 
 .input {
-    background: #001b24;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
+    background: #0a0f17;
+    border: 1px solid aliceblue;
+    color: aliceblue;
     border-radius: 5px;
     font-size: 16px;
     width: 200px;
@@ -84,13 +83,13 @@
 }
 
 .input:focus {
-    border: 1px solid var(--color-primary)
+    border: 1px solid aliceblue
 }
 
 .error {
-    background: #ff0000;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
+    background: #0a0f17;
+    border: 1px solid aliceblue;
+    color: aliceblue;
     border-radius: 5px;
     font-size: 16px;
     width: 200px;
@@ -212,7 +211,7 @@
 
 
 
-.flagBox button {
+/* .flagBox button {
     background-color: #0a0f17;
     border: none;
 }
@@ -227,4 +226,4 @@
 .flag:hover {
     opacity: .5;
     cursor: pointer;
-}
+} */

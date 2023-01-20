@@ -1,16 +1,15 @@
 import React from "react";
-import Style from "./Loader.module.css";
-import { IoEarthOutline } from "react-icons/io5";
+import s from './Loader.module.css'
 
 const Loader = () => {
-  return (
-    <div className={Style.container}>
-      <div className={Style.rotation}>
-        <div className={Style.earth}> <IoEarthOutline/> </div>
-        <div className={Style.tuki}></div>
-      </div>
-    </div>
-  );
-};
+    return (
+        <div className={s.container}>
+            <div className={s.spinner}>
+                <div className={s.inner}>
+                </div>
+            </div>
+        </div>
+    )
+}
 
 export default Loader;

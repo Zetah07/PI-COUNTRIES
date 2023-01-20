@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getSort, getPopulation, getContinents, deleteFilters, getSelectActivity } from "../../store/actions";
+import { getSort, population, continent, deleteFilters, getSelectActivity } from "../../redux/actions";
 import s from './Filters.module.css'
 
 const Filters = ({ setSort, sort, setInput, setCurrent }) => {
@@ -14,12 +14,12 @@ const Filters = ({ setSort, sort, setInput, setCurrent }) => {
     }
 
     const handlePopulation = (e) => {
-        dispatch(getPopulation(e.target.value))
+        dispatch(population(e.target.value))
         setSort(!sort)
     }
 
     const handleContinent = (e) => {
-        dispatch(getContinents(e.target.value))
+        dispatch(continent(e.target.value))
         setInput(1)
         setCurrent(1)
     }

@@ -1,0 +1,124 @@
+.container {
+    display: flex;
+    background-color: #364c93;
+    color: aliceblue;
+    padding: 90px 250px 0;
+    height: 40px;
+    justify-content: space-around;
+}
+
+.selectContainer {
+    display: flex;
+    align-items: center;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 17px;
+    padding-right: 10px;
+}
+
+.select {
+    font-size: 15px;
+    padding: 5px 5px 5px 10px;
+    border-radius: 8px;
+    background-color: #0a0f17;
+    color: aliceblue;
+    border: none;
+}
+
+.option {
+    background-color: #0a0f17;
+    color: aliceblue;
+    border-radius: 8px;
+}
+
+.select:hover {
+    border: 1px solid #8dddfcf5;
+    cursor: pointer;
+}
+
+.deleteFilter {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to left,
+            #979797 0%,
+            #a7a7a7 8%,
+            #a7a7a7 92%,
+            #979797 100%);
+}
+
+
+.front {
+    display: block;
+    position: relative;
+    padding: 8px 25px;
+    left: 10px;
+    
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #9ee7ff;
+    color: #31696d;
+    background: #dddddd;
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.deleteFilter:hover {
+    filter: brightness(110%);
+}
+
+.deleteFilter:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.deleteFilter:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.deleteFilter:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.deleteFilter:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.deleteFilter:focus:not(:focus-visible) {
+    outline: none;
+}

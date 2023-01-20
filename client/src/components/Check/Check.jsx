@@ -1,35 +1,32 @@
 import React from "react";
-import { errorClosed } from "../../store/actions";
-import Style from "./Check.module.css";
+import s from './Check.module.css';
+import img from '../../Assets/check.png'
 import { useDispatch } from "react-redux";
-import { FiCheckCircle } from "react-icons/fi";
-import { AiOutlineClose } from "react-icons/ai";
+import { errorClose } from "../../redux/actions";
 
 const Check = () => {
-  const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(errorClosed());
-  };
-  return (
-    <div className={Style.container}>
-      <div className={Style.target}>
-        <div className={Style.item}>
-          <button className={Style.button} onClick={handleClick}>
-            <AiOutlineClose/>
-          </button>
+    const dispatch = useDispatch()
+
+    const handleClick = () => {
+        dispatch(errorClose())
+    }
+
+    return (
+        <div className={s.container}>
+            <div className={s.card}>
+                <div className={s.flex}>
+                    <button className={s.btn} onClick={handleClick}>X</button>
+                </div>
+                <div className={s.title} >
+                    <h1 className={s.h1} >Activity Created!</h1>
+                </div>
+                <div className={s.status}>
+                    <img className={s.img} src={img} alt="check" />
+                </div>
+            </div>
         </div>
-        <div className={Style.text}>
-          <h1 className={Style.h1} >Activity Created!</h1>
-        </div>
-        <div className={Style.icon}>
-          <i>
-            <FiCheckCircle />
-          </i>
-        </div>
-      </div>
-    </div>
-  );
-};
+    )
+}
 
 export default Check;
