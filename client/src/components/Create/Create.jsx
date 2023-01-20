@@ -80,14 +80,14 @@ const Create = ({ setForm }) => {
                     <button className={s.close} onClick={() => setForm(false)}>X</button>
                 </div>
                 <form className={s.form} onSubmit={handleCreate} >
-                    <div>
+                    <div className={s.input_container} >
                         <h2 className={s.title}>Create Activity</h2>
                         <div className={s.column}>
                             <div className={s.div}>
                                 <label className={s.label} >Name</label>
                                 <input type="text" name="name" onChange={handleInput} className={s.input} autoComplete='off' />
                             </div>
-                            {error.name && <span className={s.x} >❌</span>}
+                            {error.name && <span className={s.x} >❗❗</span>}
                         </div>
                         <div className={s.column}>
                             <div className={s.div} >
@@ -101,14 +101,14 @@ const Create = ({ setForm }) => {
                                     <option value="5">⭐⭐⭐⭐⭐</option>
                                 </select>
                             </div>
-                            {error.difficulty && <span className={s.x} >❌</span>}
+                            {error.difficulty && <span className={s.x} >❗❗</span>}
                         </div>
                         <div className={s.column}>
                             <div className={s.div} >
                                 <label className={s.label} >Duration</label>
                                 <input type="number" name="duration" onChange={handleInput} className={s.input} min='1' max='100' />
                             </div>
-                            {error.duration && <span className={s.x} >❌</span>}
+                            {error.duration && <span className={s.x} >❗❗</span>}
                         </div>
                         <div className={s.column}>
                             <div className={s.div} >
@@ -121,7 +121,7 @@ const Create = ({ setForm }) => {
                                     <option value="Spring">Spring</option>
                                 </select>
                             </div>
-                            {error.season && <span className={s.x} >❌</span>}
+                            {error.season && <span className={s.x} >❗❗</span>}
                         </div>
                         <div className={s.column}>
                             <div className={s.div}>
@@ -131,7 +131,7 @@ const Create = ({ setForm }) => {
                                     {countries?.map((e, i) => <option key={i} value={e.name}>{e.name}</option>)}
                                 </select>
                             </div>
-                            {error.country && <span className={s.x} >❌</span>}
+                            {error.country && <span className={s.x} >❗❗</span>}
                         </div>
                         <div className={s.flagBox}>
                             {/* {create.country?.map(e => <button onClick={handleDelete} key={e}><img className={s.flag} src={e} alt='flag' /></button>)} */}

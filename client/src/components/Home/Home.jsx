@@ -11,7 +11,7 @@ import Pagination from "../Pagination/Pagination";
 import Errors from "../Errors/Errors";
 import Create from "../Create/Create";
 import Check from "../Check/Check";
-// import Footer from "../Footer/Footer";
+
 
 const Home = () => {
 
