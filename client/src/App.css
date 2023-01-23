@@ -4,11 +4,14 @@
   box-sizing: border-box;
   line-height: 1;
 
-  font-family: roboto;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background-color: #1a2547;
+  background-image: url('./Assets/World\ Map.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 
 }
 

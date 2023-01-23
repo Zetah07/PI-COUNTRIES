@@ -13,6 +13,7 @@ h4 {
     width: 100vw;
     height: 100vh;
     background-color: #0a0f176c;
+    opacity:0.98;
     position: fixed;
     display: flex;
     align-items: center;
@@ -21,9 +22,9 @@ h4 {
 }
 
 .card {
-    border-radius: 15px;
+    border-radius: 1rem;
     width: 600px;
-    background-color: #0a0f17;
+    background-color: #071429;
     box-shadow: #64646f33 0 7px 29px 0;
     padding: 10px 25px 20px 25px;
     display: flex;
@@ -35,20 +36,21 @@ h4 {
     display: flex;
     justify-content: space-between;
     padding-bottom: 15px;
-
+    
 }
 
 .btn {
     background: none;
     border: none;
     color: white;
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: bold;
-    padding-top: 10px;
+    padding-top: 0.9rem;
+    padding-left: 34rem;
 }
 
 .btn:hover {
-    color: #02d3f8;
+    color: #f80202;
     cursor: pointer;
 }
 
@@ -71,6 +73,7 @@ h4 {
 
 .span {
     color: #aaafb4;
+    padding:10px 50px 30px 0;
 }
 
 .loader {

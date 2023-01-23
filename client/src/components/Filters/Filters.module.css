@@ -1,10 +1,11 @@
 .container {
     display: flex;
-    background-color: #364c93;
+    background-color: #073fc0;
     color: aliceblue;
-    padding: 90px 250px 0;
+    padding: 5.6rem 15.6rem 0;
     height: 40px;
     justify-content: space-around;
+
 }
 
 .selectContainer {
@@ -48,6 +49,8 @@
     transition: filter 250ms;
     user-select: none;
     touch-action: manipulation;
+    left: 1rem;
+    bottom: 0.75rem;
 }
 
 .shadow {

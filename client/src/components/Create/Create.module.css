@@ -5,15 +5,22 @@
     position: fixed;
     align-items: center;
     justify-content: center;
-    background-color: #0a0f176d;
+    background-color: #0a0f176c;
+    opacity: 0.98;
     z-index: 300;
     user-select: none;
 }
 
 .card {
-    background-color: #0a0f17;
-    border-radius: 15px;
-    box-shadow: 5px 5px 12px #0a0f17;
+    background-color: #071429;
+    
+    border-radius: 1rem;
+    box-shadow: 0.75rem 0.75rem 0.75rem #40649d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 34.8rem;
 
 }
 
@@ -27,7 +34,7 @@
     background: none;
     border: none;
     color: white;
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: bold;
     padding: 20px 20px 0 0;
     line-height: 0;
@@ -50,7 +57,7 @@
 .div {
     display: flex;
     flex-direction: column;
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
 }
 
 .form {
@@ -116,7 +123,7 @@
     font-size: 14px;
     color: #dddddd;
     font-weight: bold;
-    background-color: #0a0f17;
+    background-color: #0a0f1702;
     border: none;
 }
 
@@ -210,13 +217,7 @@
     outline: none;
 }
 
-
-
-
-
-
-
-/* .flagBox button {
+.flagBox button {
     background-color: #0a0f17;
     border: none;
 }
@@ -231,4 +232,4 @@
 .flag:hover {
     opacity: .5;
     cursor: pointer;
-} */
+} 

@@ -1,16 +1,17 @@
 .input {
-    font-family: "Segoe UI", "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 0.75rem;
     color: #fff;
     background-color: #0a0f17;
     box-shadow: 0 0 5px #fbfbfb66, 0 0 0 5px transparent;
     border-radius: 5px 0 0 5px;
     border: none;
     outline: none;
-    padding: 0.4vw;
-    width: 320px;
+    padding: 0.4rem 0;
+    width: 20rem;
     transition: .4s;
+    margin-bottom: 1.2rem;
 }
 
 .input:hover {
@@ -30,9 +31,9 @@
     color: #31696d;
     text-shadow: 1px 1px 2px #9ee7ff;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 0.9rem;
     position: relative;
-    top: -1px;
+    margin-top:1.4rem;
     left: 2.5px;
 }
 

@@ -49,10 +49,10 @@ const Home = () => {
                     <Filters setSort={setSort} sort={sort} setInput={setInput} setCurrent={setCurrent} />
                     <div className={s.gridContainer}>
                         <div className={s.grid}>
-                            {sorting?.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map(e => {
+                            {sorting?.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map(country => {
                                 return (
-                                    <div className={e.continent.split(' ')[0].toLowerCase()} key={e.id}  >
-                                        <Card id={e.id} name={e.name} flag={e.flag} continent={e.continent} />
+                                    <div className={country.continent.split(' ')[0].toLowerCase()} key={country.id}  >
+                                        <Card id={country.id} name={country.name} flag={country.flag} continent={country.continent} />
                                     </div>
                                 )
                             })}
