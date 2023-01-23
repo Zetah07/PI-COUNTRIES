@@ -35,3 +35,8 @@ module.exports = (sequelize) => {
     }
   }, { timestamps: false });
 };
+
+
+//pdta: como hay paises que vienen con caracteres japoneses, hace que falle la consola de SQL shell,
+//SET client_encoding TO 'UTF8';
+//soluciona el error.
