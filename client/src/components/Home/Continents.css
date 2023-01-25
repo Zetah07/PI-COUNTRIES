@@ -7,7 +7,7 @@
     --south: #c6ec5c;
     --africa: #b08ec1;
     --bgHover: #0a101d;
-    --radius: 20px;
+    --radius: 1.25rem;
     --transition: .8s;
 }
 
@@ -16,8 +16,8 @@
 
 .Asia {
     background-color: var(--bgHover);
-    border-radius: 8px;
-    padding: 0 15px;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
 }
 
 .asia:hover .Asia {
@@ -27,8 +27,8 @@
 
 
 .asia:hover {
-    box-shadow: 6px 6px 12px var(--asia);
-    width: 340px;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem var(--asia);
+    width: 21.25rem;
     border-radius: var(--radius);
     transition: var(--transition);
     background-color: var(--bgHover);
@@ -38,8 +38,8 @@
 /* North */
 .North {
     background-color: var(--bgHover);
-    border-radius: 8px;
-    padding: 0 15px;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
 }
 
 .north:hover .North {
@@ -48,8 +48,8 @@
 }
 
 .north:hover {
-    box-shadow: 6px 6px 12px var(--north);
-    width: 340px;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem var(--north);
+    width: 21.25rem;
     border-radius: var(--radius);
     transition: var(--transition);
     background-color: var(--bgHover);
@@ -60,8 +60,8 @@
 
 .Europe {
     background-color: var(--bgHover);
-    border-radius: 8px;
-    padding: 0 15px;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
 }
 
 .europe:hover .Europe {
@@ -70,8 +70,8 @@
 }
 
 .europe:hover {
-    box-shadow: 6px 6px 12px var(--europe);
-    width: 340px;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem var(--europe);
+    width: 21.25rem;
     border-radius: var(--radius);
     transition: var(--transition);
     background-color: var(--bgHover);
@@ -81,8 +81,8 @@
 
 .Antarctica {
     background-color: var(--bgHover);
-    border-radius: 8px;
-    padding: 0 15px;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
 }
 
 .antarctica:hover .Antarctica {
@@ -91,8 +91,8 @@
 }
 
 .antarctica:hover {
-    box-shadow: 6px 6px 12px #fafefd;
-    width: 340px;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem #fafefd;
+    width: 21.25rem;
     border-radius: var(--radius);
     transition: var(--transition);
     background-color: var(--bgHover);
@@ -103,8 +103,8 @@
 
 .Africa {
     background-color: var(--bgHover);
-    border-radius: 8px;
-    padding: 0 15px;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
 }
 
 .africa:hover .Africa {
@@ -113,8 +113,8 @@
 }
 
 .africa:hover {
-    box-shadow: 6px 6px 12px var(--africa);
-    width: 340px;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem var(--africa);
+    width: 21.25rem;
     border-radius: var(--radius);
     transition: var(--transition);
     background-color: var(--bgHover);
@@ -124,8 +124,8 @@
 
 .Oceania {
     background-color: var(--bgHover);
-    border-radius: 8px;
-    padding: 0 15px;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
 }
 
 .oceania:hover .Oceania {
@@ -134,8 +134,8 @@
 }
 
 .oceania:hover {
-    box-shadow: 6px 6px 12px var(--oceania);
-    width: 340px;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem var(--oceania);
+    width: 21.25rem;
     border-radius: var(--radius);
     transition: var(--transition);
     background-color: var(--bgHover);
@@ -144,8 +144,8 @@
 
 .South {
     background-color: var(--bgHover);
-    border-radius: 8px;
-    padding: 0 15px;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
 }
 
 .south:hover .South {
@@ -154,8 +154,8 @@
 }
 
 .south:hover {
-    box-shadow: 6px 6px 12px var(--south);
-    width: 340px;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem var(--south);
+    width: 21.25rem;
     border-radius: var(--radius);
     transition: var(--transition);
     background-color: var(--bgHover);
@@ -167,12 +167,12 @@
     background: var(--aliceblue);
     cursor: pointer;
     border: none;
-    padding: 16px 42px;
+    padding: 1rem 2.6rem;
     color: #38726C;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     position: relative;
-    border-radius: 12px;
+    border-radius: 0.8rem;
 }
 
 .btn::before {
@@ -188,8 +188,8 @@
             red, blue, deeppink, blue,
         );
     background-size: 800%;
-    border-radius: 10px;
-    filter: blur(8px);
+    border-radius: 0.7rem;
+    filter: blur(0.5rem);
     animation: glowing 20s linear infinite;
 }
 

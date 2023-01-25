@@ -20,12 +20,14 @@ module.exports = (sequelize) => {
     continent: {
       type: DataTypes.STRING,
       allowNull: false,
+      
     },
     capital: {
       type: DataTypes.ARRAY(DataTypes.STRING),
     },
     subregion: {
       type: DataTypes.STRING,
+      
     },
     area: {
       type: DataTypes.STRING,

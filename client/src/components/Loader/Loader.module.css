@@ -10,10 +10,10 @@
 
 /* Loader */
 .spinner {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 100%;
-    background-color: aqua;
+    background-color: rgb(0, 179, 255);
     display: grid;
     place-items: center;
     animation: zoomin 1.5s infinite alternate-reverse;
@@ -30,11 +30,24 @@
 @keyframes zoomin {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 100px 20px rgb(16, 71, 71);
+        box-shadow: 0 0 100px 20px rgb(4, 216, 216);
     }
 
     100% {
         transform: scale(1.5);
         box-shadow: 0 0 100px 20px #000;
     }
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(0, 179, 255);
+    font-size: 2.1rem;
+}
+.logo{
+    color:aqua;
+    width: 30px
+
 }

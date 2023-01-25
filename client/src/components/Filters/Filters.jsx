@@ -24,16 +24,16 @@ const Filters = ({ setSort, sort, setInput, setCurrent }) => {
         setCurrent(1)
     }
 
-    const handleClick = (e) => {
-        e.preventDefault()
+    const handleClick = (event) => {
+        event.preventDefault()
         dispatch(deleteFilters())
         document.getElementById('sort').value = 'sort'
         document.getElementById('population').value = 'population'
         document.getElementById('continents').value = 'all'
     }
 
-    const handleActivity = (e) => {
-        dispatch(getSelectActivity(e.target.value))
+    const handleActivity = (event) => {
+        dispatch(getSelectActivity(event.target.value))
         setInput(1)
         setCurrent(1)
     }

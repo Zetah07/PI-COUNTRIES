@@ -1,6 +1,6 @@
 .container {
-    background-color: #070b14;
-    height: 65px;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 1%, rgba(1,2,10,1) 25%, rgba(8,16,84,1) 71%, rgba(13,13,129,1) 93%); 
     display: flex;
     align-items: center;
     position: fixed;
