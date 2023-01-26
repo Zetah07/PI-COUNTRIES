@@ -72,7 +72,7 @@ const Create = ({ setForm }) => {
     });
   };
 
-  let countriesSorted = countries.sort((a, b) => a.name.localeCompare(b.name));
+  let countriesSorted = countries.sort((a, b) => a.name.localeCompare(b.name));  
 
   return (
     <div className={s.container}>
@@ -166,7 +166,6 @@ const Create = ({ setForm }) => {
               {error.country && <span className={s.x}>❗❗</span>}
             </div>
             <div className={s.flagBox}>
-              {/* {create.country?.map(country => <button key={country}><img className={s.flag} src={country.flag} alt='flag' /></button>)} */}
               {create.country?.map((country, i) => (
                 <span key={i} className={s.span} value={country}>
                   {country}

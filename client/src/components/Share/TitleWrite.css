@@ -3,9 +3,9 @@
   font-family: monospace;
   white-space: nowrap;
   border-right: 4px solid;
-  color: var(--color-light);
+  color: #e8e8e8;
   margin: 0 auto;
-  
+  font-size: 3rem;
 
   animation: typing 1.5s steps(15), blink 0.25s infinite step-end alternate;
   overflow: hidden;

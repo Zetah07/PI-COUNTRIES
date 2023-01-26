@@ -8,13 +8,15 @@ import cloud2 from '../../Assets/cloud2.png';
 import cloud3 from '../../Assets/cloud3.png';
 import cloud4 from '../../Assets/cloud4.png';
 import bg from '../../Assets/bg.png';
+import TitleWrite from '../Share/TitleWrite';
 
 const LandingPage = () => {
+    let title="Countries PI"
     return (
         <div className={s.container}>
             <div className={s.left}>
                 <div className={s.div}>
-                    <h1 className={s.title}>Countries PI</h1>
+                    <TitleWrite className={s.title} title={title}></TitleWrite>
                     <p className={s.p}>
                         Welcome to my individual project about countries.<br />
                         In this project you will find current information of different countries from all over the world. <br />
