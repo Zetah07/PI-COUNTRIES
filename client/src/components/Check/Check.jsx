@@ -1,5 +1,5 @@
 import React from "react";
-import s from './Check.module.css';
+import Style from './Check.module.css';
 import img from '../../Assets/check.png'
 import { useDispatch } from "react-redux";
 import { errorClose } from "../../redux/actions";
@@ -13,16 +13,16 @@ const Check = () => {
     }
 
     return (
-        <div className={s.container}>
-            <div className={s.card}>
-                <div className={s.flex}>
-                    <button className={s.btn} onClick={handleClick}>X</button>
+        <div className={Style.container}>
+            <div className={Style.card}>
+                <div className={Style.flex}>
+                    <button className={Style.btn} onClick={handleClick}>X</button>
                 </div>
-                <div className={s.title} >
-                    <h1 className={s.h1} >Activity Created!</h1>
+                <div className={Style.title} >
+                    <h1 className={Style.h1} >Activity Created!</h1>
                 </div>
-                <div className={s.status}>
-                    <img className={s.img} src={img} alt="check" />
+                <div className={Style.status}>
+                    <img className={Style.img} src={img} alt="check" />
                 </div>
             </div>
         </div>

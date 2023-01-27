@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { checking, getCountries } from "../../redux/actions";
-import s from "./Create.module.css";
+import Style from "./Create.module.css";
 
 const Create = ({ setForm }) => {
   let countries = useSelector((state) => state.countries);
@@ -39,10 +39,10 @@ const Create = ({ setForm }) => {
     return errors;
   };
 
-  const handleInput = (e) => {
+  const handleInput = (event) => {
     setCreate({
       ...create,
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
@@ -51,7 +51,7 @@ const Create = ({ setForm }) => {
       setCreate({
         ...create,
         country: [...create.country, event.target.value],
-        // flags: [...create.flags, e.target.valor]
+        // flags: [...create.flags, event.target.valor]
       });
     }
   };
@@ -75,36 +75,36 @@ const Create = ({ setForm }) => {
   let countriesSorted = countries.sort((a, b) => a.name.localeCompare(b.name));  
 
   return (
-    <div className={s.container}>
-      <div className={s.card}>
-        <div className={s.flex}>
-          <button className={s.close} onClick={() => setForm(false)}>
+    <div className={Style.container}>
+      <div className={Style.card}>
+        <div className={Style.flex}>
+          <button className={Style.close} onClick={() => setForm(false)}>
             X
           </button>
         </div>
-        <form className={s.form} onSubmit={handleCreate}>
-          <div className={s.input_container}>
-            <h2 className={s.title}>Create Activity</h2>
-            <div className={s.column}>
-              <div className={s.div}>
-                <label className={s.label}>Name</label>
+        <form className={Style.form} onSubmit={handleCreate}>
+          <div className={Style.input_container}>
+            <h2 className={Style.title}>Create Activity</h2>
+            <div className={Style.column}>
+              <div className={Style.div}>
+                <label className={Style.label}>Name</label>
                 <input
                   type="text"
                   name="name"
                   onChange={handleInput}
-                  className={s.input}
+                  className={Style.input}
                   autoComplete="off"
                 />
               </div>
-              {error.name && <span className={s.x}>❗❗</span>}
+              {error.name && <span className={Style.x}>❗❗</span>}
             </div>
-            <div className={s.column}>
-              <div className={s.div}>
-                <label className={s.label}>Difficulty</label>
+            <div className={Style.column}>
+              <div className={Style.div}>
+                <label className={Style.label}>Difficulty</label>
                 <select
                   name="difficulty"
                   onChange={handleInput}
-                  className={s.input}
+                  className={Style.input}
                 >
                   <option value="">--Select Difficulty--</option>
                   <option value="1">⭐ ☆ ☆ ☆ ☆</option>
@@ -114,29 +114,29 @@ const Create = ({ setForm }) => {
                   <option value="5">⭐⭐⭐⭐⭐</option>
                 </select>
               </div>
-              {error.difficulty && <span className={s.x}>❗❗</span>}
+              {error.difficulty && <span className={Style.x}>❗❗</span>}
             </div>
-            <div className={s.column}>
-              <div className={s.div}>
-                <label className={s.label}>Duration</label>
+            <div className={Style.column}>
+              <div className={Style.div}>
+                <label className={Style.label}>Duration</label>
                 <input
                   type="number"
                   name="duration"
                   onChange={handleInput}
-                  className={s.input}
+                  className={Style.input}
                   min="1"
                   max="100"
                 />
               </div>
-              {error.duration && <span className={s.x}>❗❗</span>}
+              {error.duration && <span className={Style.x}>❗❗</span>}
             </div>
-            <div className={s.column}>
-              <div className={s.div}>
-                <label className={s.label}>Season</label>
+            <div className={Style.column}>
+              <div className={Style.div}>
+                <label className={Style.label}>Season</label>
                 <select
                   name="season"
                   onChange={handleInput}
-                  className={s.input}
+                  className={Style.input}
                 >
                   <option value="">--Select Season--</option>
                   <option value="Summer">Summer</option>
@@ -145,33 +145,33 @@ const Create = ({ setForm }) => {
                   <option value="Spring">Spring</option>
                 </select>
               </div>
-              {error.season && <span className={s.x}>❗❗</span>}
+              {error.season && <span className={Style.x}>❗❗</span>}
             </div>
-            <div className={s.column}>
-              <div className={s.div}>
-                <label className={s.label}>Countries</label>
+            <div className={Style.column}>
+              <div className={Style.div}>
+                <label className={Style.label}>Countries</label>
                 <select
                   name="country"
                   onChange={handleSelect}
-                  className={s.input}
+                  className={Style.input}
                 >
                   <option value="countries">--Select Countries--</option>
-                  {countriesSorted?.map((e, i) => (
-                    <option key={i} value={e.name}>
-                      {e.name}
+                  {countriesSorted?.map((event, i) => (
+                    <option key={i} value={event.name}>
+                      {event.name}
                     </option>
                   ))}
                 </select>
               </div>
-              {error.country && <span className={s.x}>❗❗</span>}
+              {error.country && <span className={Style.x}>❗❗</span>}
             </div>
-            <div className={s.flagBox}>
+            <div className={Style.flagBox}>
               {create.country?.map((country, i) => (
-                <span key={i} className={s.span} value={country}>
+                <span key={i} className={Style.span} value={country}>
                   {country}
                   <button
                     onClick={handleDelete}
-                    className={s.btnDelete}
+                    className={Style.btnDelete}
                     value={country}
                   >
                     x
@@ -180,15 +180,15 @@ const Create = ({ setForm }) => {
               ))}
             </div>
           </div>
-          <div className={s.btnBox}>
+          <div className={Style.btnBox}>
             <button
               type="submit"
-              className={s.btn}
+              className={Style.btn}
               hidden={Object.entries(error).length ? true : false}
             >
-              <span className={s.shadow}></span>
-              <span className={s.edge}></span>
-              <span className={s.front}>Create</span>
+              <span className={Style.shadow}></span>
+              <span className={Style.edge}></span>
+              <span className={Style.front}>Create</span>
             </button>
           </div>
         </form>

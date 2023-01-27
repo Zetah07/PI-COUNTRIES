@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import s from './Detail.module.css';
+import Style from './Detail.module.css';
 
 const Detail = () => {
 
@@ -15,30 +15,30 @@ const Detail = () => {
 
     return (
         
-        <div className={s.container}>
+        <div className={Style.container}>
             {
                 country ?
-                    <div className={s.card}>
-                        <div className={s.flex}>
+                    <div className={Style.card}>
+                        <div className={Style.flex}>
                             <h3>{country.id}</h3>
                             <Link to='/home'>
-                                <button className={s.btn}>X</button>
+                                <button className={Style.btn}>X</button>
                             </Link>
                         </div>
-                        <img className={s.flag} src={country.flag} alt={country.name} />
-                        <h3 className={s.title}>{country.name}</h3>
-                        <div className={s.grid}>
-                            <h4>Population: <span className={s.span}>{country.population}</span> </h4>
-                            <h4>Continent: <span className={s.span}>{country.continent}</span></h4>
-                            <h4>Subregion: <span className={s.span}> {country.subregion}</span></h4>
-                            <h4>Area: <span className={s.span}>{country.area}</span></h4>
-                            <h4>Capital: <span className={s.span}>{country.capital}</span></h4>
+                        <img className={Style.flag} src={country.flag} alt={country.name} />
+                        <h3 className={Style.title}>{country.name}</h3>
+                        <div className={Style.grid}>
+                            <h4>Population: <span className={Style.span}>{country.population}</span> </h4>
+                            <h4>Continent: <span className={Style.span}>{country.continent}</span></h4>
+                            <h4>Subregion: <span className={Style.span}> {country.subregion}</span></h4>
+                            <h4>Area: <span className={Style.span}>{country.area}</span></h4>
+                            <h4>Capital: <span className={Style.span}>{country.capital}</span></h4>
                         </div>
                     </div>
                     :
-                    <div className={s.loader}>
-                        <div className={s.spinner}>
-                            <div className={s.inner}>
+                    <div className={Style.loader}>
+                        <div className={Style.spinner}>
+                            <div className={Style.inner}>
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Pagination.module.css";
+import Style from "./Pagination.module.css";
 
 const Pagination = ({ current, setCurrent, max, input, setInput }) => {
   const next = () => {
@@ -11,43 +11,43 @@ const Pagination = ({ current, setCurrent, max, input, setInput }) => {
     setInput(input - 1);
   };
 
-  const onKeyDown = (e) => {
-    if (e.keyCode === 13) {
-      setCurrent(parseInt(e.target.value));
+  const onKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      setCurrent(parseInt(event.target.value));
       if (
-        parseInt(e.target.value) < 1 ||
-        parseInt(e.target.value) > max ||
-        isNaN(parseInt(e.target.value))
+        parseInt(event.target.value) < 1 ||
+        parseInt(event.target.value) > max ||
+        isNaN(parseInt(event.target.value))
       ) {
         setCurrent(1);
         setInput(1);
       } else {
-        setCurrent(parseInt(e.target.value));
+        setCurrent(parseInt(event.target.value));
       }
     }
   };
 
-  /*     const handleChange = (e) => {
-            setInput(e.target.value)
+  /*     const handleChange = (event) => {
+            setInput(event.target.value)
         } */
 
   return (
-    <div className={s.container}>
-      <button disabled={current === 1} className={s.btn} onClick={previous}>
+    <div className={Style.container}>
+      <button disabled={current === 1} className={Style.btn} onClick={previous}>
         {"<"}
       </button>
       <input
-        className={s.input}
+        className={Style.input}
         type="text"
         maxLength="2"
         name="page"
         autoComplete="off"
-        onChange={(e) => setInput(e)}
+        onChange={(event) => setInput(event)}
         value={input}
-        onKeyDown={(e) => onKeyDown(e)}
+        onKeyDown={(event) => onKeyDown(event)}
       />
       <span>of {max}</span>
-      <button disabled={current === max} className={s.btn} onClick={next}>
+      <button disabled={current === max} className={Style.btn} onClick={next}>
         {">"}
       </button>
     </div>

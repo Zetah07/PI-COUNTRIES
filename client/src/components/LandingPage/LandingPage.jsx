@@ -1,5 +1,5 @@
 import React from "react";
-import s from './LandingPage.module.css';
+import Style from './LandingPage.module.css';
 import '../Home/Continents.css';
 import { Link } from 'react-router-dom';
 import earth from '../../Assets/earth.png';
@@ -13,29 +13,29 @@ import TitleWrite from '../Share/TitleWrite';
 const LandingPage = () => {
     let title="Countries PI"
     return (
-        <div className={s.container}>
-            <div className={s.left}>
-                <div className={s.div}>
-                    <TitleWrite className={s.title} title={title}></TitleWrite>
-                    <p className={s.p}>
+        <div className={Style.container}>
+            <div className={Style.left}>
+                <div className={Style.div}>
+                    <TitleWrite className={Style.title} title={title}></TitleWrite>
+                    <p className={Style.p}>
                         Welcome to my individual project about countries.<br />
                         In this project you will find current information of different countries from all over the world. <br />
                         Enjoy  {':)'}
                     </p>
                     <Link to='/home'>
-                        <button className={s.btn}>
-                            <span className={s.span}>START</span>
+                        <button className={Style.btn}>
+                            <span className={Style.span}>START</span>
                         </button>
                     </Link>
                 </div>
             </div>
-            <div className={s.right}>
-                <img className={s.bg} src={bg} alt="bg" />
-                <img className={s.earth} src={earth} alt="earth" />
-                <img className={s.cloud1} src={cloud1} alt="cloud1" />
-                <img className={s.cloud2} src={cloud2} alt="cloud2" />
-                <img className={s.cloud4} src={cloud3} alt="cloud3" />
-                <img className={s.cloud3} src={cloud4} alt="cloud4" />
+            <div className={Style.right}>
+                <img className={Style.bg} src={bg} alt="bg" />
+                <img className={Style.earth} src={earth} alt="earth" />
+                <img className={Style.cloud1} src={cloud1} alt="cloud1" />
+                <img className={Style.cloud2} src={cloud2} alt="cloud2" />
+                <img className={Style.cloud4} src={cloud3} alt="cloud3" />
+                <img className={Style.cloud3} src={cloud4} alt="cloud4" />
 
             </div>
         </div>

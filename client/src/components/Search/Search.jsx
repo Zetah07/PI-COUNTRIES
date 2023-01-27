@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import s from "./Search.module.css";
+import Style from "./Search.module.css";
 import { useDispatch } from "react-redux";
 import { getByName } from "../../redux/actions";
 
@@ -21,21 +21,21 @@ const Search = () => {
 
 
   return (
-    <div className={s.searchBar}>
+    <div className={Style.searchBar}>
       <input
         id="search"
         type="search"
-        className={s.input}
+        className={Style.input}
         placeholder="Search..."
-        onChange={(e) => handleSearch(e)}
+        onChange={(event) => handleSearch(event)}
         value={search}
         autoComplete="on"
         
       />
       <button
         type="submit"
-        className={s.searchBtn}
-        onClick={(e) => handleSubmit(e)}
+        className={Style.searchBtn}
+        onClick={(event) => handleSubmit(event)}
       >
         Search
       </button>

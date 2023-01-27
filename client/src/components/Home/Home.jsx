@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './Continents.css'
-import s from './Home.module.css'
+import Style from './Home.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { getActivities, getCountries } from "../../redux/actions";
 import Nav from "../Nav/Nav";
@@ -38,7 +38,7 @@ const Home = () => {
 
     }, [dispatch, sorting, activities])
     return (
-        <div className={s.container}>
+        <div className={Style.container}>
             {sorting.length ?
                 <div>
                     <Nav setForm={setForm} />
@@ -46,8 +46,8 @@ const Home = () => {
                     {check && <Check />}
                     {form && <Create setForm={setForm} />}
                     <Filters setSort={setSort} sort={sort} setInput={setInput} setCurrent={setCurrent} />
-                    <div className={s.gridContainer}>
-                        <div className={s.grid}>
+                    <div className={Style.gridContainer}>
+                        <div className={Style.grid}>
                             {sorting?.slice((current - 1) * perPage, (current - 1) * perPage + perPage).map(country => {
                                 return (
                                     <div className={country.continent.split(' ')[0].toLowerCase()} key={country.id}  >
