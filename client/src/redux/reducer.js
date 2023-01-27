@@ -24,7 +24,7 @@ const rootReducer = (state = initialState, action) => {
                 activities: action.payload,
             }
         case GET_SELECT_ACTIVITY:
-            const result = state.countries.filter(e => e.activity.includes(action.payload))
+            const result = state.countries.filter(event => event.activity.includes(action.payload))
             return {
                 ...state,
                 sorting: result,
@@ -58,7 +58,7 @@ const rootReducer = (state = initialState, action) => {
 
         case CONTINENTS:
             const select = [...state.countries]
-            let filter = select.filter(e => e.continent === action.payload)
+            let filter = select.filter(event => event.continent === action.payload)
             console.log(filter);
             return {
                 ...state,
