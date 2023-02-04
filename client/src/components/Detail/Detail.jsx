@@ -13,6 +13,11 @@ const Detail = () => {
 
     }, [id])
 
+    const formatter = new Intl.NumberFormat("en-US", {
+        style: "decimal",
+        useGrouping: true,
+    });
+
     return (
         
         <div className={Style.container}>
@@ -28,10 +33,10 @@ const Detail = () => {
                         <img className={Style.flag} src={country.flag} alt={country.name} />
                         <h3 className={Style.title}>{country.name}</h3>
                         <div className={Style.grid}>
-                            <h4>Population: <span className={Style.span}>{country.population}</span> </h4>
+                            <h4>Population: <span className={Style.span}>{formatter.format(country.population)}</span> </h4>
                             <h4>Continent: <span className={Style.span}>{country.continent}</span></h4>
                             <h4>Subregion: <span className={Style.span}> {country.subregion}</span></h4>
-                            <h4>Area: <span className={Style.span}>{country.area}</span></h4>
+                            <h4>Area: <span className={Style.span}>{formatter.format(country.area)}km²</span></h4>
                             <h4>Capital: <span className={Style.span}>{country.capital}</span></h4>
                         </div>
                     </div>

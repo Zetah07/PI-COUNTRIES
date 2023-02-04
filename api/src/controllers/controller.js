@@ -12,7 +12,7 @@ const getHome = async () => {
         continent: e.continents[0],
         capital: e.capital,
         subregion: e.subregion,
-        area: `${e.area}km2`,
+        area: e.area,
         population: e.population,
       };
     });
@@ -61,7 +61,7 @@ const getByName = async (name) => {
     continent: api.continents[0],
     capital: api.capital,
     subregion: api.subregion,
-    area: `${api.area}km²`,
+    area: api.area,
     population: api.population,
   };
 
@@ -78,7 +78,7 @@ const getById = async (id) => {
     continent: api.continents[0],
     capital: api.capital,
     subregion: api.subregion,
-    area: `${api.area}km²`,
+    area: api.area,
     population: api.population,
   };
   return api;

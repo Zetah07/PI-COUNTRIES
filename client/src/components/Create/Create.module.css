@@ -33,19 +33,21 @@
 .close {
     background: none;
     border: none;
-    color: white;
+    color: red;
     font-size: 1rem;
     font-weight: bold;
     padding: 20px 20px 0 0;
     line-height: 0;
     position: relative;
-    top: 20px;
-    left: 480px;
+    top: 30px;
+    left: 240px;
+
 }
 
 .close:hover {
     color: rgb(2, 211, 248);
     cursor: pointer;
+
 }
 
 .column {
